@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import {
+  Box,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Heading,
+  Img,
+  Text,
+} from "@chakra-ui/react";
+import Clock from "./assets/Clock";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Box style={{ fontsize: "100px" }}>
+        <Clock />
+        <Card align="center">
+          <CardHeader>
+            <Heading size="md">Customer dashboard</Heading>
+          </CardHeader>
+          <CardBody>
+            <Text>
+              "View a summary of all your customers over the last month."
+            </Text>
+            <Img src="../../public/image/672664_s.jpg" boxSize="300px"></Img>
+          </CardBody>
+          <CardFooter>
+            <Button colorScheme="blue">View here</Button>
+          </CardFooter>
+        </Card>
+      </Box>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
